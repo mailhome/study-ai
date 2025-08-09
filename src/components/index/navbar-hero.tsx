@@ -20,16 +20,21 @@ const navLinks = [
         href: "/parents"
     },
 
+    {
+        label: "Sign In",
+        href: "/sign-in"
+    }
 ]
 
-export default function Navbar() {
+export default function NavbarHero() {
   const [menu, setMenu] = useState(false)
   const scrolled = useScrollTop();
 
   return (
-    <header className={cn('w-full hidden bg-white shadow-sm z-50', scrolled && "block border-b border-neutral-400 fixed")}>
+    <header className={cn('w-full bg-white shadow-sm z-50 block', scrolled && "hidden")}>
       <nav className='sticky width-container'>
         <div className="flex items-center justify-between w-full xl:-my-10 lg:-my-4 md:-my-4 -my-6">
+
             {/* Logo Here */}
             <div className="relative xl:h-48 xl:w-48 lg:h-36 lg:w-36 md:w-28 md:h-28 h-32 w-32">
                 <Image 
@@ -43,16 +48,16 @@ export default function Navbar() {
                 <NavLinksItem />
             </div>
 
-            <div className="flex items-center justify-center gap-x-10">
+            <div className="flex items-center justify-center gap-10">
              <Link href="/sign-in">
                 <Button variant="elevated" className='text-xl px-6 text-white bg-amber-400 border border-none shadow-amber-800 h-10'>
-                  Get Started
+                    Get Started
                 </Button>
             </Link>
             <Sheet open={menu} onOpenChange={setMenu}>
               <SheetTrigger 
               className="md:hidden cursor-pointer">
-                  <Menu className='size-10' />
+                  <Menu className='size-8' />
               </SheetTrigger>
               <SheetContent className='w-full'>
                 <div className="flex items-center justify-center flex-col gap-10 h-full w-full">
@@ -64,6 +69,11 @@ export default function Navbar() {
                 {item.label}
                 </Link>
                 ))}
+                <Link href="/sign-in">
+                   <Button variant="elevated" className='text-2xl px-8 text-white bg-amber-400 border border-none shadow-amber-800 h-14'>
+                      Get Started
+                   </Button>
+                </Link>
                 </div>
               </SheetContent>
             </Sheet>
@@ -94,13 +104,8 @@ const NavLinksItem = () => {
                     {item.label}
                 </div>
             )}
-        </Link> 
+        </Link>
       ))}
-      <Link href="/sign-in">
-        <Button variant="elevated" className='text-xl px-6 text-white bg-amber-400 border border-none shadow-amber-800 h-10'>
-          Get Started
-        </Button>
-      </Link>
     </div>
   )
 }
