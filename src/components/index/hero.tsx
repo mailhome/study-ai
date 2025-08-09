@@ -18,7 +18,7 @@ export default function Hero() {
                 <Button variant="elevated" className='text-2xl px-8 text-white bg-amber-400 border border-none shadow-amber-800 h-14 w-auto'>
                     Get Started
                 </Button>
-                </Link>
+            </Link>
         </div>
         <div className="relative lg:w-full xl:h-[500px] lg:h-[400px] md:h-[500px] md:w-10/12 h-[350px] w-[500px] xl:justify-start justify-center items-center flex md:ml-20  xl:-ml-5 ml-10 lg:-ml-10 ">
             <Image 

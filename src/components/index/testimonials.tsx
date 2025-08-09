@@ -8,9 +8,9 @@ import StarRating from './star-rating';
 
 export default function Testimonials () {
   return (
-    <div className='w-full h-auto 2xl:mt-28 xl:mt-20 lg:mt-16 mt-20 '>
+    <div className='w-full h-auto 2xl:mt-28 xl:mt-20 lg:mt-16 mt-20 width-container'>
       <div className="flex items-center justify-center flex-col lg:gap-6 gap-4">
-        <blockquote className='xl:text-4xl text-neutral-800 lg:text-3xl md:text-2xl text-2xl font-medium xl:w-8/12 w-10/12 mx-auto text-center'>
+        <blockquote className='xl:text-5xl text-neutral-800 lg:text-3xl md:text-2xl text-2xl font-medium w-full mx-auto text-center xl:leading-[4rem]'>
             “I love this app. I use it everyday for my homework every time when I&apos;m struggling.”
         </blockquote>
         <p className='xl:text-2xl lg:text-lg md:text-md text-md text-neutral-600'>Janelle, First-Year College Student, NC</p>
@@ -24,7 +24,7 @@ export default function Testimonials () {
       </div>
 
       <div className="flex xl:mt-20 mt-20 items-center justify-center flex-col gap-6">
-        <h1 className='xl:text-6xl text-neutral-800 lg:text-3xl md:text-4xl text-3xl font-bold w-8/12 mx-auto text-center'>
+        <h1 className='xl:text-6xl text-neutral-800 lg:text-4xl md:text-4xl text-3xl font-bold xl:w-8/12 w-full mx-auto text-center'>
             10+ million problems explained
         </h1>
         <div className="flex items-center justify-center text-neutral-800">
@@ -131,10 +131,10 @@ const MoreTestimonials = () => {
       style={{ x }}
       ref={containerRef}
       className='w-max flex gap-10 active:cursor-grabbing'>
-        {testimonialsItem.map((item) => (
+        {testimonialsItem.map((item, i) => (
           <div 
-          key={item.testimony} 
-          className="py-10 px-10 rounded-lg flex items-start justify-start bg-neutral-200/50 flex-col gap-6 w-[400px] h-[300px]">
+          key={i} 
+          className="py-10 px-10 rounded-lg flex items-start justify-start bg-neutral-200/50 flex-col gap-6 w-[400px] h-[400px]">
             <StarRating rating={4.5} />
             <p className='text-muted-foreground text-xl font-semibold'>{item.heading}</p>
             <div className="flex flex-col items-start justify-start gap-1">
